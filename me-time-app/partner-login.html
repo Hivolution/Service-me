@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Login - Me-Time</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-placeholder">Logo</div>
+        <h1>Me-Time - Partner Portaal</h1>
+    </header>
+    <main>
+        <h2>Partner Login</h2>
+        <form id="partnerLoginForm">
+            <div>
+                <label for="partnerEmail">E-mailadres:</label>
+                <input type="email" id="partnerEmail" name="partnerEmail" required>
+            </div>
+            <div>
+                <label for="partnerPassword">Wachtwoord:</label>
+                <input type="password" id="partnerPassword" name="partnerPassword" required>
+            </div>
+            <button type="submit" class="btn">Log in</button>
+            <p id="partnerLoginErrorMessage" style="color: red;"></p>
+        </form>
+    </main>
+    <footer>
+        <p>Bent u nog geen partner? <a href="mailto:partners@me-time.app">Neem contact op</a>.</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

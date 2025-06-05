@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registratie Bevestigd - Me-Time</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional styles for QR code container if needed */
+        #qrCodeContainer {
+            width: 200px; /* Adjust as needed */
+            height: 200px; /* Adjust as needed */
+            margin: 20px auto; /* Center the QR code */
+            border: 1px solid #eee;
+            padding: 10px;
+        }
+        #qrCodeContainer img {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-placeholder">Logo</div>
+        <h1>Me-Time</h1>
+    </header>
+    <main>
+        <h2>Welkom bij Me-Time!</h2>
+        <p>Gebruik deze QR-code om je diensten in te wisselen bij onze partners.</p>
+        <div id="qrCodeContainer"></div>
+        <p><a href="login.html" class="btn">Log in op je account</a></p>
+    </main>
+    <footer>
+        <p>Bedankt voor het registreren!</p>
+    </footer>
+    <script src="js/lib/qrcode.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const qrCodeId = localStorage.getItem('pendingQrCodeId');
+            const qrCodeContainer = document.getElementById('qrCodeContainer');
+
+            if (qrCodeId && qrCodeContainer) {
+                new QRCode(qrCodeContainer, {
+                    text: qrCodeId,
+                    width: 180, // Slightly smaller than container to fit padding
+                    height: 180,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+                // No need to clear immediately if user might want to re-scan/save,
+                // but for a one-time view:
+                // localStorage.removeItem('pendingQrCodeId');
+                // For now, let's leave it for potential debugging or if the user refreshes.
+                // It will be overwritten on next registration.
+            } else {
+                qrCodeContainer.innerHTML = "<p>Kon QR-code niet laden. Probeer opnieuw te registreren of neem contact op met support.</p>";
+                console.error('QR Code ID not found in localStorage or container not found.');
+            }
+        });
+    </script>
+</body>
+</html>

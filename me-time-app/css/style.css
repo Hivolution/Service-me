@@ -1,0 +1,234 @@
+/* General styles */
+body {
+    font-family: sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    padding: 20px;
+    background-color: #f8f8f8; /* Light grey background for header */
+    border-bottom: 1px solid #eee; /* Subtle border */
+    display: flex;
+    align-items: center;
+}
+
+.logo-placeholder {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    background-color: #A7D7C5; /* Pastel green */
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 200px; /* Ensure buttons have a decent width */
+}
+
+.btn:hover {
+    background-color: #8dbfAC; /* Darker shade of pastel green for hover */
+}
+
+footer {
+    padding: 20px;
+    background-color: #f8f8f8; /* Light grey background for footer */
+    border-top: 1px solid #eee; /* Subtle border */
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0;
+}
+
+/* Basic mobile-first considerations */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-placeholder {
+        margin-bottom: 10px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    .btn {
+        width: 80%; /* Make buttons take more width on small screens */
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    footer p {
+        font-size: 0.8em;
+    }
+}
+
+/* Styles from registration-confirmation.html */
+#qrCodeContainer {
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    margin: 20px auto; /* Center the QR code */
+    border: 1px solid #eee;
+    padding: 10px;
+}
+#qrCodeContainer img { /* This style is specific to the library's output if it wraps img */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Styles from dashboard.html */
+#userQrCodeContainer { /* User dashboard QR */
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+#userQrCodeContainer img { /* This style is specific to the library's output if it wraps img */
+    display: block;
+    margin: 0 auto;
+}
+.dashboard-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+#serviceHistory ul {
+    list-style-type: none;
+    padding: 0;
+}
+#serviceHistory li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #ccc;
+}
+#serviceHistory li:last-child {
+    border-bottom: none;
+}
+.logout-btn { /* Used on user and partner dashboards */
+    background-color: #f44336; /* Red for logout */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-left: 20px;
+}
+.logout-btn:hover {
+    background-color: #d32f2f;
+}
+/* Specific header style for dashboards with a logout button */
+header.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styles from partner-dashboard.html */
+#qrScannerReader { /* Div for the QR video feed */
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border: 1px solid #ccc;
+    margin: 10px auto;
+    background-color: #f0f0f0; /* Placeholder background */
+}
+#scanResult { /* Feedback for QR scan */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.scan-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+.scan-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+.scan-controls button { /* Styling for start/stop scan buttons if needed */
+    margin: 5px;
+}
+/* .dashboard-section and .logout-btn are already defined from dashboard.html */
+/* header.dashboard-header is also already defined */
+
+/* Styles from admin.html */
+/* .admin-section can reuse .dashboard-section styles. Add .admin-section for specifics like box-shadow */
+.admin-section {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Specific to admin sections */
+}
+.admin-section h3 { /* Shared with how .dashboard-section might have h3, but can be specific if needed */
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+/* General table styles for Admin page, scoped with .admin-table */
+.admin-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.admin-table th,
+.admin-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+.admin-table th {
+    background-color: #f2f2f2;
+}
+/* Add Partner Form Styles */
+#addPartnerForm div {
+    margin-bottom: 10px;
+}
+#addPartnerForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+#addPartnerForm input[type="text"],
+#addPartnerForm input[type="email"] {
+    width: calc(100% - 22px); /* Full width minus padding and border for inputs inside the form */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

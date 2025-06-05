@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Me-Time</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Styles specific to dashboard */
+        #userQrCodeContainer {
+            width: 200px; /* Adjust as needed */
+            height: 200px; /* Adjust as needed */
+            margin: 20px auto; /* Center the QR code */
+            border: 1px solid #eee;
+            padding: 10px;
+        }
+        #userQrCodeContainer img {
+            display: block;
+            margin: 0 auto;
+        }
+        .dashboard-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        #serviceHistory ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #serviceHistory li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #ccc;
+        }
+        #serviceHistory li:last-child {
+            border-bottom: none;
+        }
+        .logout-btn {
+            background-color: #f44336; /* Red for logout */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-left: 20px;
+        }
+        .logout-btn:hover {
+            background-color: #d32f2f;
+        }
+        header {
+            display: flex;
+            justify-content: space-between; /* Align items in header */
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <div class="logo-placeholder">Logo</div>
+            <h1>Me-Time</h1>
+        </div>
+        <button id="logoutButton" class="logout-btn">Log uit</button>
+    </header>
+    <main>
+        <h2 id="welcomeMessage"></h2>
+
+        <div class="dashboard-section" id="qrSection">
+            <h3>Jouw QR Code</h3>
+            <div id="userQrCodeContainer"></div>
+            <p>Gebruik deze QR-code bij onze partners.</p>
+        </div>
+
+        <div class="dashboard-section" id="userCredits">
+            <h3>Credits</h3>
+            <p id="creditsAmount">100 Credits</p>
+        </div>
+
+        <div class="dashboard-section" id="serviceHistory">
+            <h3>Service Historiek</h3>
+            <ul id="serviceHistoryList">
+                <!-- Service history will be populated here -->
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Me-Time. Alle rechten voorbehouden.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/lib/qrcode.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
