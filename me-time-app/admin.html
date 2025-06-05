@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Me-Time</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <style> tags removed, styles moved to css/style.css -->
+</head>
+<body>
+    <header> <!-- Uses default header style -->
+        <div style="display: flex; align-items: center;">
+            <div class="logo-placeholder">Logo</div>
+            <h1>Me-Time - Admin Panel</h1>
+        </div>
+        <!-- Optional: Add Admin Logout if needed -->
+    </header>
+    <main style="padding: 20px;">
+        <h2>Administratie Dashboard</h2>
+
+        <div class="dashboard-section admin-section" id="adminUserListSection">
+            <h3>Gebruikerslijst</h3>
+            <button id="exportUsersButton" class="btn" style="margin-bottom:10px;">Exporteer Gebruikers (CSV)</button>
+            <div id="adminUserList" class="admin-table"></div>
+        </div>
+
+        <div class="dashboard-section admin-section" id="adminPartnerListSection">
+            <h3>Partnerlijst</h3>
+            <div id="adminPartnerList" class="admin-table"></div>
+        </div>
+
+        <div class="dashboard-section admin-section" id="adminStatsSection">
+            <h3>Statistieken</h3>
+            <p id="adminTotalServices">Totaal uitgevoerde diensten: N/A (gesimuleerd)</p>
+        </div>
+
+        <div class="dashboard-section admin-section" id="addPartnerSection">
+            <h3>Nieuwe Partner Toevoegen</h3>
+            <form id="addPartnerForm">
+                <div>
+                    <label for="newPartnerName">Partner Naam:</label>
+                    <input type="text" id="newPartnerName" required>
+                </div>
+                <div>
+                    <label for="newPartnerEmail">Partner Email:</label>
+                    <input type="email" id="newPartnerEmail" required>
+                </div>
+                <div>
+                    <label for="newPartnerLocation">Partner Locatie/Adres:</label>
+                    <input type="text" id="newPartnerLocation" required>
+                </div>
+                <button type="submit" class="btn">Voeg Partner Toe</button>
+            </form>
+        </div>
+
+    </main>
+    <footer>
+        <p>&copy; 2023 Me-Time Administratiepaneel. Alle rechten voorbehouden.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

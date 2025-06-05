@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Dashboard - Me-Time</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #qrScannerReader {
+            width: 100%;
+            max-width: 500px; /* Max width for the scanner */
+            height: auto;   /* Adjust as needed, or let the library define it */
+            border: 1px solid #ccc;
+            margin: 10px auto; /* Center it */
+            background-color: #f0f0f0;
+        }
+        #scanResult {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .scan-success {
+            background-color: #d4edda; /* Green for success */
+            color: #155724;
+        }
+        .scan-error {
+            background-color: #f8d7da; /* Red for error */
+            color: #721c24;
+        }
+        .dashboard-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .logout-btn {
+            background-color: #f44336; /* Red for logout */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-left: 20px;
+        }
+        .logout-btn:hover {
+            background-color: #d32f2f;
+        }
+         header {
+            display: flex;
+            justify-content: space-between; /* Align items in header */
+            align-items: center;
+        }
+        .scan-controls button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <div class="logo-placeholder">Logo</div>
+            <h1>Me-Time - Partner Dashboard</h1>
+        </div>
+        <button id="partnerLogoutButton" class="logout-btn">Log uit</button>
+    </header>
+    <main>
+        <h2 id="partnerWelcomeMessage">Partner Dashboard</h2>
+
+        <div class="dashboard-section" id="qrScannerSection">
+            <h3>QR Code Scanner</h3>
+            <div id="qrScannerReader"></div>
+            <div class="scan-controls" style="text-align: center; margin-top:10px;">
+                <button id="startScanButton" class="btn">Start Scannen</button>
+                <button id="stopScanButton" class="btn" style="display: none;">Stop Scannen</button>
+            </div>
+            <div id="scanResult">Scan een QR code...</div>
+        </div>
+
+        <div class="dashboard-section" id="partnerStats">
+            <h3>Statistieken</h3>
+            <p>Klanten vandaag (gescand): <span id="dailyScans">0</span></p>
+            <p>Totale credits verdiend (simulatie): <span id="totalCreditsEarned">500</span></p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Me-Time Partnerportaal. Alle rechten voorbehouden.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/lib/html5-qrcode.min.js"></script>
+    <script src="js/qr.js"></script>
+    <!-- For this subtask, logic will be in qr.js. Consider partner.js if it grows. -->
+</body>
+</html>
